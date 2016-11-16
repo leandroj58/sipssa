@@ -14,9 +14,11 @@ class CreatePlanillaTable extends Migration
     {
         Schema::create('planilla', function (Blueprint $table) {
             $table->increments('id_planilla');
-            $table->integer('mes_correspondiente');
+            $table->integer('mes _correspondiente');
             $table->integer('año_correspondiente');
-            $table->integer('estado');
+            $table->enum('estado',['activa', 'cerrada', 'entregada']);
+            $table->integer('id_usuario')->unsigned();
+            $table->foreign('id_usuario')->references('id')->on('users');
             $table->timestamps();
         });
     }
