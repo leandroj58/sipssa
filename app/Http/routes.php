@@ -13,8 +13,19 @@
 
 //Rutas a cada una de las vistas del proyecto
 
-    Route::get('/', 'homeController@viewHome' );
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
+    //Home - muestro la planilla que esta activa para que el usuario comience de una a cargar entradas
+    // esta es la HOME del cliente, no del sistema completo
+    Route::get('home/{id_usuario}/{id_planilla}', [
+
+        'as' => 'home',
+        'uses' => 'PlanillaController@show'
+    ]);
+
+/*
 //cargo el formulario de carga de la planilla que esta en "Active"
     Route::get('carga/{id_planilla_active}', 'planillaController@viewDetailActive' );
 
@@ -26,7 +37,7 @@
 
 //Muestro los datos cargados en una planilla en particular
     Route::get('planilla/{id_planilla_active}', 'planillaController@viewDetail' );
-
+*/
 
 
 /*

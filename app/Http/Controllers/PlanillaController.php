@@ -13,7 +13,7 @@ class PlanillaController extends Controller
      */
     public function index()
     {
-        //
+        dd('Home de cada cliente');
     }
 
     /**
@@ -40,12 +40,13 @@ class PlanillaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $id_usuario
+     * @param  int  $id_planilla
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_usuario,$id_planilla)
     {
-        //
+        dd('Esta es la home del cliente: ' . $id_usuario . ' y se muestra la planilla: ' . $id_planilla);
     }
 
     /**
