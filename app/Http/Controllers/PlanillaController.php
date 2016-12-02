@@ -17,6 +17,26 @@ class PlanillaController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     * @param  int  $id_planilla
+     * @return \Illuminate\Http\Response
+     */
+    public function cargarEntradasPlanilla($id_planilla)
+    {
+        dd(' este es el formulario para cargar entradas en la planilla'. $id_planilla);
+    }
+
+
+    /**
+     * Devuelve los datos cargados en una planilla (el formulario completo con las filas cargadas)
+
+     */
+    public function MostrarDetallePlanilla($id_planilla)
+    {
+        dd('muestro todos los datos cargados en '.$id_planilla);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -35,18 +55,6 @@ class PlanillaController extends Controller
     public function store(Request $request)
     {
         //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id_usuario
-     * @param  int  $id_planilla
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id_usuario,$id_planilla)
-    {
-        dd('Esta es la home del cliente: ' . $id_usuario . ' y se muestra la planilla: ' . $id_planilla);
     }
 
     /**
@@ -97,15 +105,6 @@ class PlanillaController extends Controller
 
      */
     public function planillasUsuario($id_user){
-
-
-    }
-
-    /**
-     * Devuelve los datos cargados en una planilla (el formulario completo con las filas cargadas)
-
-     */
-    public function detallePlanilla($id_planilla){
 
 
     }
