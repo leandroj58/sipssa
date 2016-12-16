@@ -6,34 +6,33 @@ use Illuminate\Http\Request;
 
 class PlanillaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        dd('Home de cada cliente');
+        return view('layaout');
     }
 
-    /**
-     * Display the specified resource.
-     * @param  int  $id_planilla
-     * @return \Illuminate\Http\Response
-     */
     public function cargarEntradasPlanilla($id_planilla)
     {
-        dd(' este es el formulario para cargar entradas en la planilla'. $id_planilla);
+        return view('cargarEntrada', compact('id_planilla'));
     }
 
 
-    /**
-     * Devuelve los datos cargados en una planilla (el formulario completo con las filas cargadas)
-
-     */
-    public function MostrarDetallePlanilla($id_planilla)
+    public function mostrarDetallePlanilla($id_planilla)
     {
-        dd('muestro todos los datos cargados en '.$id_planilla);
+        //con el id de la planilla, tengo que mandarle todas las entradas a la vista en forma de objeto,
+        // luego recorrerlo y mostrar todo con un foreach de blade
+
+        /*
+        $datosPlanilla = [
+            'fila1'=>['dato1', 'dato2', 'dato3'],
+            'fila2'=>['dato1', 'dato2', 'dato3'],
+        ];
+        */
+
+        $datosPlanilla = "hola mundo";
+
+        return view('detallePlanilla', compact('id_planilla', 'datosPlanilla'));
     }
 
     /**
@@ -89,23 +88,5 @@ class PlanillaController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    /**
-     * Devuelve la planilla en estado de ACTIVA de un usuario en particular
-
-     */
-    public function planillaActiva($id_user){
-
-
-    }
-
-    /**
-     * Devuelve un listado de las planillas de un usuario en particular
-
-     */
-    public function planillasUsuario($id_user){
-
-
     }
 }

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout');
 });
 
 //Home - muestro la planilla que esta activa para que el usuario comience de una a cargar entradas
@@ -26,7 +26,7 @@ Route::get('home/{id_planilla}', [
 Route::get('planilla/{id_planilla}', [
 
     'as' => 'Detalle.planilla',
-    'uses' => 'PlanillaController@MostrarDetallePlanilla'
+    'uses' => 'PlanillaController@mostrarDetallePlanilla'
 ]);
 
 
