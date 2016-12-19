@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Entities\Planilla;
+use App\Entities\Fila;
 
 class PlanillaController extends Controller
 {
@@ -20,6 +22,9 @@ class PlanillaController extends Controller
 
     public function mostrarDetallePlanilla($id_planilla)
     {
+
+
+
         //con el id de la planilla, tengo que mandarle todas las entradas a la vista en forma de objeto,
         // luego recorrerlo y mostrar todo con un foreach de blade
 
@@ -30,9 +35,10 @@ class PlanillaController extends Controller
         ];
         */
 
-        $datosPlanilla = "hola mundo";
+        $Planilla = Planilla::findOrFail($id_planilla);
 
-        return view('detallePlanilla', compact('id_planilla', 'datosPlanilla'));
+        return view('detallePlanilla', compact('id_planilla','Planilla'));
+
     }
 
     /**

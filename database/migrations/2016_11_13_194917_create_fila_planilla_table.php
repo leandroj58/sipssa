@@ -12,8 +12,8 @@ class CreateFilaPlanillaTable extends Migration
      */
     public function up()
     {
-        Schema::create('fila_planila', function (Blueprint $table) {
-            $table->increments('id_fila');
+        Schema::create('filas', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('dia_comprobante');
             $table->integer('mes_comprobante');
             $table->integer('año_comprobante');
@@ -22,9 +22,8 @@ class CreateFilaPlanillaTable extends Migration
             $table->integer('año_practica');
             $table->float('precio_práctica');
 
-
-            $table->integer('id_planilla')->unsigned();
-            $table->foreign('id_planilla')->references('id_planilla')->on('planilla');
+            $table->integer('planilla_id')->unsigned();
+            $table->foreign('planilla_id')->references('id')->on('planillas');
             $table->timestamps();
         });
     }

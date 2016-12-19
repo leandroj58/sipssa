@@ -14,9 +14,10 @@
 
 <body>
 
-@include('partials/menu')
+@include('partials/menu', compact('id_planilla'))
 
 <br><br>
+
 @yield('content')
 
 

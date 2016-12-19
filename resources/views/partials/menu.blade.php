@@ -11,8 +11,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Cargar entradas</a></li>
+                <li class="active"><a href="{{route('home',$id_planilla)}}">Home</a></li>
+                <li><a href="{{route('Detalle.planilla',$id_planilla)}}">Cargar entradas </a></li>
                 <li><a href="#">Planillas</a></li>
             </ul>
         </div><!--/.nav-collapse -->

@@ -12,9 +12,9 @@ class CreatePlanillaTable extends Migration
      */
     public function up()
     {
-        Schema::create('planilla', function (Blueprint $table) {
-            $table->increments('id_planilla');
-            $table->integer('mes _correspondiente');
+        Schema::create('planillas', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('mes_correspondiente');
             $table->integer('año_correspondiente');
             $table->enum('estado',['activa', 'cerrada', 'entregada']);
             $table->integer('id_usuario')->unsigned();
