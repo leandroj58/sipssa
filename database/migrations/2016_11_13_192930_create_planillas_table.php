@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlanillaTable extends Migration
+class CreatePlanillasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class CreatePlanillaTable extends Migration
     {
         Schema::create('planillas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('mes_correspondiente');
-            $table->integer('año_correspondiente');
+            $table->integer('mes');
+            $table->integer('año');
             $table->enum('estado',['activa', 'cerrada', 'entregada']);
             $table->integer('id_usuario')->unsigned();
             $table->foreign('id_usuario')->references('id')->on('users');
@@ -30,6 +30,6 @@ class CreatePlanillaTable extends Migration
      */
     public function down()
     {
-        Schema::drop('planilla');
+        Schema::drop('planillas');
     }
 }
